@@ -170,7 +170,7 @@
     function alarm(){
         var canvas = $("#mycanvas")[0];
         var ctx = canvas.getContext("2d");
-        var img = new Image(); 　
+        var img = new Image();
         img.src = "ksuisbg.gif";
         img.onload = function() {
         ctx.drawImage(img, 0, 0, 300, 300);
@@ -196,7 +196,7 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
+        
         active = false;
         period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
         $("#time").html("経過時間:  0");
