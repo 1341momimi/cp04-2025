@@ -24,6 +24,12 @@
         position:absolute; top:310px; 
         left:10px; right:10px;
     }
+
+    #remain::after{
+        content: "秒";
+        color: cornsilk;
+    }
+
     
     #time {
         box-shadow: 5px 5px 5px;
