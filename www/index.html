@@ -163,6 +163,7 @@
                 var rest = 0;
                 var etime = 0;
                 var alarmTriggered = false;
+                var pausedTime = 0;
 
 
 
@@ -193,14 +194,15 @@
                 function btnAClick(e){
                     if(period != 0){
                         active = true;
-                        startTime = new Date();
+                        startTime = new Date() - pausedTime * 1000;
+                        startTime = new Data(startTime);
                     }
                 }
 
                 // ButtonBがクリックされた時の処理
                 function btnBClick(e){
                     active = false;
-                    startTime = new Date();
+                    pausedTime = etime;
                 }
 
                 // ButtonCがクリックされた時の処理
@@ -211,6 +213,7 @@
                     period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
                     $("#time").html("経過時間:  0");
                     $("#remain").html("残り時間: " + period);
+                    pausedTime = 0;
 
                 }
 
