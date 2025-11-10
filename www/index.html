@@ -164,8 +164,11 @@
                 var etime = 0;
                 var alarmTriggered = false;
                 var pausedTime = 0;
-
-
+                var timerId = null;
+        
+                $(function(){
+                    timerId = setInterval(timer, 500);
+                });
 
                 // ボタンの初期設定
                 function init(){
@@ -197,7 +200,10 @@
                 function btnAClick(e){
                     active = true;
                     startTime = new Date() - pausedTime * 1000;
-                    startTime = new Data(startTime);
+                    startTime = new Date(startTime);
+                    if (timerId) clearInterval(timerId);
+                    timerId = setInterval(timer, 500);
+
                 }
 
                 // ButtonBがクリックされた時の処理
@@ -234,6 +240,7 @@
                             time = 0;
                             alarm();
                             alarmTriggered = true;
+                            clearInterval(timerId);
                         }
                     }
 
