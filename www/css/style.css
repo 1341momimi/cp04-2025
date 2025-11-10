@@ -74,6 +74,7 @@
 
     #btnD{
         font-size: 30px;
+        color: black;
         position: absolute; top: 510px; left: 10%; width: 80%; height: 60px;
     }
     
